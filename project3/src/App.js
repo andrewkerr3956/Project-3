@@ -1,6 +1,8 @@
 import './App.css';
 import React from 'react';
-import { NavLink, Link, Route, BrowserRouter } from 'react-router-dom';
+import { NavLink, Route, BrowserRouter } from 'react-router-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 
 const Navbar = () => {
   return (
@@ -14,10 +16,15 @@ const Navbar = () => {
   );
 }
 
-const ToDoList = () => {
+const ToDoList = (props) => {
   return (
     <div className="container">
       <div className="todo-container">
+        {props.state && props.state.length > 1 && props.state.map ((item, idx) => {
+          return (
+            <div> {props.state} </div>
+          )
+        })}
         <h2>Add items to your To-Do list!</h2>
       </div>
     </div>
@@ -31,13 +38,6 @@ const ToDoContent = () => {
       <button>Add Task</button>
       <ToDoList />
     </div>
-    /*
-    <div className="container">
-      <div className="flex">
-
-      </div>
-    </div>
-    */
   )
 }
 
