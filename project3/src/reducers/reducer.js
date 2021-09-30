@@ -1,12 +1,8 @@
 import { combineReducers } from "redux";
-import AddTask from "../actions/addTask";
-import DeleteTask from "../actions/deleteTask";
-import ToggleActive from "../actions/toggleActive";
+import toDoTaskHandler from "./toDoTaskHandler";
 
 const reducer = combineReducers({
-    AddTask,
-    DeleteTask,
-    ToggleActive
+    toDoTaskHandler
 });
 
 export default reducer;

@@ -1,4 +1,4 @@
-const TOGGLE_ACTIVE = "TOGGLE_ACTIVE";
+import { TOGGLE_ACTIVE } from "../constants/constants";
 
 const ToggleActive = (id, active) => {
     return {

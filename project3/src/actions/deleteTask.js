@@ -1,4 +1,4 @@
-const DELETE_TASK = "DELETE_TASK";
+import { DELETE_TASK } from "../constants/constants";
 
 const DeleteTask = (id) => {
     return {

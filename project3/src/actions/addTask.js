@@ -1,4 +1,4 @@
-const ADD_TASK = "ADD_TASK";
+import { ADD_TASK } from "../constants/constants";
 
 const AddTask = (id, title, active) => {
     return {

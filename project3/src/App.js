@@ -3,6 +3,9 @@ import React from 'react';
 import { NavLink, Route, BrowserRouter } from 'react-router-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import { reducer } from "./reducers/reducer"
+
+let store = createStore(reducer);
 
 const Navbar = () => {
   return (
