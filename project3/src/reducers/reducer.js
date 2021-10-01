@@ -1,8 +1,6 @@
 import { combineReducers } from "redux";
-import toDoTaskHandler from "./toDoTaskHandler";
+import taskListData from "./taskListData";
 
-const reducer = combineReducers({
-    toDoTaskHandler
-});
+const reducer = taskListData;
 
 export default reducer;

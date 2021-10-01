@@ -1,11 +1,13 @@
 import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink, Route, BrowserRouter } from 'react-router-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import { reducer } from "./reducers/reducer"
-
-let store = createStore(reducer);
+import ToDoContent from './components/ToDoContent.jsx';
+import { addTask } from "./actions/addTask";
+import {deleteTask} from "./actions/deleteTask";
+import {toggleActive} from "./actions/toggleActive";
+import { reducer } from "./reducers/reducer";
 
 const Navbar = () => {
   return (
@@ -19,32 +21,9 @@ const Navbar = () => {
   );
 }
 
-const ToDoList = (props) => {
-  return (
-    <div className="container">
-      <div className="todo-container">
-        {props.state && props.state.length > 1 && props.state.map ((item, idx) => {
-          return (
-            <div> {props.state} </div>
-          )
-        })}
-        <h2>Add items to your To-Do list!</h2>
-      </div>
-    </div>
-  )
-}
-
-const ToDoContent = () => {
-  return (
-    <div className="task-container">
-      <input type="text" name="task" placeholder="Enter task..." />
-      <button>Add Task</button>
-      <ToDoList />
-    </div>
-  )
-}
 
 const ContactContent = () => {
+
   return (
     <div className="container">
       <div className="form-container">

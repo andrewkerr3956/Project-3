@@ -1,6 +1,8 @@
 import {ADD_TASK, DELETE_TASK, TOGGLE_ACTIVE} from "../constants/constants";
 
-const toDoTaskHandler = (state = [null], action) => {
+let initialData = [];
+
+const taskListData = (state = initialData, action) => {
     switch (action.type) {
         case ADD_TASK:
             return state.push(...state, action.task);          
@@ -13,4 +15,4 @@ const toDoTaskHandler = (state = [null], action) => {
     } 
 }
 
-export default toDoTaskHandler;
+export default taskListData;

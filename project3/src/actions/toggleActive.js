@@ -1,6 +1,6 @@
 import { TOGGLE_ACTIVE } from "../constants/constants";
 
-const ToggleActive = (id, active) => {
+const toggleActive = (id, active) => {
     return {
         type: TOGGLE_ACTIVE,
         taskId: id,
@@ -9,4 +9,4 @@ const ToggleActive = (id, active) => {
         }
     };
 };
-export default ToggleActive;
+export default toggleActive;

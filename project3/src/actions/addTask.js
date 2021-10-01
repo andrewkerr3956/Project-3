@@ -1,6 +1,6 @@
 import { ADD_TASK } from "../constants/constants";
 
-const AddTask = (id, title, active) => {
+const addTask = (id, title, active) => {
     return {
         type: ADD_TASK,
         taskId: id,
@@ -10,4 +10,4 @@ const AddTask = (id, title, active) => {
         }
     };
 };
-export default AddTask;
+export default addTask;

@@ -15,8 +15,8 @@ nav li {
   text-decoration: none;
   display: inline;
   padding: 10px;
-  border-left: 2px solid gray;
-  border-right: 2px solid gray;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
 }
 
 nav li a {
@@ -67,6 +67,7 @@ nav li a:hover {
   text-align: center;
 }
 
-.active {
+nav li .active {
   background: royalblue;
+  padding: 10px 20px;
 }
