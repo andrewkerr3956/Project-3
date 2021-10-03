@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState } from 'react';
-import { NavLink, Route, BrowserRouter } from 'react-router-dom';
+import { NavLink, Route, BrowserRouter, Redirect } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { addTask } from "./actions/addTask";
 import {deleteTask} from "./actions/deleteTask";
@@ -90,6 +90,7 @@ function App() {
       </header>
       <Route path="/todos" component={ToDoContent} />
       <Route path="/contact" component={ContactContent} />
+      <Redirect to="/todos" />
     </BrowserRouter >
   );
 }
