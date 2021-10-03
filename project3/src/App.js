@@ -1,13 +1,15 @@
 import './App.css';
 import React, { useState } from 'react';
 import { NavLink, Route, BrowserRouter } from 'react-router-dom';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import ToDoContent from './components/ToDoContent.jsx';
 import { addTask } from "./actions/addTask";
 import {deleteTask} from "./actions/deleteTask";
 import {toggleActive} from "./actions/toggleActive";
 import { reducer } from "./reducers/reducer";
+import {TaskListContainer} from './containers/TaskListContainer';
+import  {ToDoContent}  from './components/ToDoContent.jsx';
+import {ContactContent} from './components/ContactContent.jsx';
+
 
 const Navbar = () => {
   return (
@@ -21,8 +23,38 @@ const Navbar = () => {
   );
 }
 
+/*
+const ToDoContent = (props) => {
 
+  const [taskName, setTaskName] = useState('');
+
+  const updateTaskText = async(event) => {
+      console.log(event.target.value);
+      setTaskName(event.target.value);
+  }
+
+  const handleClick = async(event) => {
+    
+    console.log(props.taskName);
+  }
+
+  return (
+    <div className="task-container">
+      <input type="text" name="task" value={taskName} onChange={updateTaskText} placeholder={"Enter task..."} />
+      <button onClick={handleClick}>Add Task</button> <br />
+    </div>
+  )
+}
+*/
+
+/*
 const ContactContent = () => {
+
+  // Contact component will handle it's own state.
+  // const [firstName, setFirstName] = useState("");
+  // const [lastName, setLastName] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [comment, setComment] = useState("");
 
   return (
     <div className="container">
@@ -46,6 +78,8 @@ const ContactContent = () => {
     </div>
   )
 }
+*/
+
 
 function App() {
   return (
@@ -60,4 +94,5 @@ function App() {
   );
 }
 
-export default App;
+export default App 
+

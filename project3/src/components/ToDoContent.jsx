@@ -1,21 +1,15 @@
-import { useState, setState } from "react";
+import React from 'react';
+import TaskListContainer from '../containers/TaskListContainer';
 
-const ToDoContent = (props) => {
-
-    const [taskName, setTaskName] = useState('');
-
-    const updateTaskText = async(event) => {
-        console.log(event.target.value);
-        setTaskName(event.currentTarget.value);
-    }
+const ToDoContent = () => {
 
     return (
-      <div className="task-container">
-        <input type="text" name="task" value={taskName} onChange={updateTaskText} placeholder={"Enter task..."} />
-        <button onClick={() => props.onSubmit(props.taskId, taskName)}>Add Task</button> <br />
-        {taskName}
-      </div>
-    )
+        <div className="task-container">
+          {/* <TaskListContainer /> */}
+          <input type="text" name="task" placeholder={"Enter task..."} />
+          <button>Add Task</button> <br />
+        </div>
+      )
 }
 
-export default ToDoContent;
+export {ToDoContent};

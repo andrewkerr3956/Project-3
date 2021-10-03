@@ -1,13 +1,11 @@
 import { ADD_TASK } from "../constants/constants";
 
-const addTask = (id, title, active) => {
+const addTask = (id, title) => {
     return {
         type: ADD_TASK,
         taskId: id,
-        task: {
-            taskTitle: title,
-            taskActive: active
-        }
+        taskTitle: title,
+        taskActive: false
     };
 };
 export default addTask;
