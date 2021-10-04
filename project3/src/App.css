@@ -38,19 +38,23 @@ nav li a:hover {
   text-align: left;
 }
 
-.task-container input {
+.task-container > input {
   border-radius: round;
   height: 25px;
   width: 350px;
   margin-right: 70px;
 }
 
-.task-container button {
+.task-container > button {
   border: 2px solid royalblue;
   color: royalblue;
   border-radius: round;
   height: 30px;
   width: 150px;
+}
+
+.task-container ul {
+  text-align: center;
 }
 
 .todo-container {
@@ -70,4 +74,9 @@ nav li a:hover {
 nav li .active {
   background: royalblue;
   padding: 10px 20px;
+}
+
+.task-item {
+  flex-basis: 20%;
+  margin-right: 15px;
 }
