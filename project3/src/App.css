@@ -76,7 +76,6 @@ nav li .active {
   padding: 10px 20px;
 }
 
-.task-item {
-  flex-basis: 20%;
-  margin-right: 15px;
+.float-right {
+  float: right;
 }
