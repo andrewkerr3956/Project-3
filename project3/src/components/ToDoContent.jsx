@@ -70,9 +70,10 @@ const ToDoContent = () => {
           activeArray.push(tasks[i]);
         }
       }
+      setHoldTasks(tasks);
     }
       // Use the holdTasks state to preserve the original tasks array.
-      setHoldTasks(tasks);
+      
       // Manipulate the tasks array to hold only the active tasks.
       setTasks(activeArray)
     
@@ -94,9 +95,10 @@ const ToDoContent = () => {
             completedArray.push(tasks[i]);
           }
         }
+        setHoldTasks(tasks);
       }
       // Use the holdTasks state to preserve the original tasks array.
-      setHoldTasks(tasks);
+      
       // Manipulate the tasks array to hold only the completed tasks.
       setTasks(completedArray)
     }
