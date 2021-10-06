@@ -1,9 +1,18 @@
+.float-right {
+  float: right;
+}
+
+header {
+  background: rgba(0, 0, 0, 0.9);
+}
+
 h2 {
+  color: white;
   margin-left: 10px;
 }
 
 nav {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.6);
   color: white;
 }
 
@@ -14,9 +23,14 @@ nav ul {
 nav li {
   text-decoration: none;
   display: inline;
-  padding: 10px;
+  padding: 5px;
   border-left: 1px solid gray;
   border-right: 1px solid gray;
+}
+
+nav li .active {
+  padding: 10px 10px;
+  background: royalblue;
 }
 
 nav li a {
@@ -48,22 +62,17 @@ nav li a:hover {
 .task-container > button {
   border: 2px solid royalblue;
   color: royalblue;
-  border-radius: round;
+  border-radius: 4px;
   height: 30px;
   width: 150px;
 }
 
-.task-container ul {
-  text-align: center;
-}
-
-.todo-container {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  margin-top: 100px;
-  background: gray;
-  width: 100%;
+.toggle-button {
+  border: 2px solid royalblue;
+  background: royalblue;
+  color: white;
+  border-radius: 4px;
+  margin: 10px;
 }
 
 .form-container {
@@ -71,11 +80,45 @@ nav li a:hover {
   text-align: center;
 }
 
-nav li .active {
-  background: royalblue;
-  padding: 10px 20px;
+.contact-heading {
+  color: black;
 }
 
-.float-right {
-  float: right;
+/* Responsive Design */
+@media screen and (max-width: 576px) {
+  h2 {
+    text-align: center;
+  }
+
+  nav ul {
+    text-align: center;
+  }
+
+  .task-container > input {
+    width: 45%;
+    margin-right: 35px;
+  }
+  .task-container > button {
+    width: 30%;
+  }
+
+  .task-container ul {
+    margin-left: 35px !important;
+    width: 80% !important;
+  }
+
+  #firstName,
+  #lastName,
+  #email {
+    width: 50%;
+  }
+
+  #comments {
+    width: 80%;
+  }
+
+  .contact-heading {
+    font-size: medium;
+    text-align: center;
+  }
 }

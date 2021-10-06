@@ -15,9 +15,8 @@ const Navbar = () => {
   return (
     <nav>
       <ul>
-        {/* Add React Router functionality later on */}
-        <li><NavLink to="/todos">To-Do List</NavLink></li>
-        <li><NavLink to="/contact">Contact</NavLink></li>
+        <li><NavLink className="navLink" to="/todos">To-Do List</NavLink></li>
+        <li><NavLink className="navLink" to="/contact">Contact</NavLink></li>
       </ul>
     </nav>
   );
@@ -88,8 +87,10 @@ function App() {
         <h2>React + Redux To-Do App</h2>
         <Navbar />
       </header>
-      <Route path="/todos" component={ToDoContent} />
-      <Route path="/contact" component={ContactContent} />
+      <main>
+        <Route path="/todos" component={ToDoContent} />
+        <Route path="/contact" component={ContactContent} />
+      </main>
       <Redirect to="/todos" />
     </BrowserRouter >
   );

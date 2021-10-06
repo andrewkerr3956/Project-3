@@ -43,8 +43,8 @@ const ContactContent = () => {
     if(submission.succeeded) {
         return (
             <div className="container">
-                <h1 style={{ textAlign: "center" }}>Submission successful.</h1>
-                <h4 style={{ textAlign: "center" }}>The submission has been received. Thank you.</h4>
+                <h1 className="contact-heading">Submission successful.</h1>
+                <h4 className="contact-heading">The submission has been received. Thank you.</h4>
             </div>
         )
     }
@@ -54,8 +54,8 @@ const ContactContent = () => {
         const bold = {fontWeight: "bold"}
         return (
             <div className="container">
-                <h1 style={{ textAlign: "center" }}>Confirm your information.</h1>
-                <h4 style={{ textAlign: "center" }}>Verify that the information shown below is correct.</h4>
+                <h1 className="contact-heading">Confirm your information.</h1>
+                <h4 className="contact-heading">Verify that the information shown below is correct.</h4>
                 <div className="form-container">
                     <form className="container-fluid" onSubmit={setSubmission}>
                         <label for="firstName">First Name</label> <br />
@@ -86,7 +86,7 @@ const ContactContent = () => {
     else {
         return (
             <div className="container">
-                <h2 style={{ textAlign: "center" }}>Please enter details below to contact us.</h2>
+                <h2 className="contact-heading">Please enter details below to contact us.</h2>
                 <div className="form-container">
                     <form className="container-fluid" onSubmit={handleSubmit}>
                         <label for="firstName">First Name</label> <br />
