@@ -1,15 +1,13 @@
 import './App.css';
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink, Route, BrowserRouter, Redirect } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { addTask } from "./actions/addTask";
-import {deleteTask} from "./actions/deleteTask";
-import {toggleActive} from "./actions/toggleActive";
-import { reducer } from "./reducers/reducer";
-import {TaskListContainer} from './containers/TaskListContainer';
+// import { addTask } from "./actions/addTask";
+// import {deleteTask} from "./actions/deleteTask";
+// import {toggleActive} from "./actions/toggleActive";
+// import { reducer } from "./reducers/reducer";
+// import {TaskListContainer} from './containers/TaskListContainer';
 import  {ToDoContent}  from './components/ToDoContent.jsx';
 import {ContactContent} from './components/ContactContent.jsx';
-
 
 const Navbar = () => {
   return (

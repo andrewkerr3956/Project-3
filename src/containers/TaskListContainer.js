@@ -20,6 +20,8 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
+/*
 const TaskListContainer = connect(mapStateToProps, mapDispatchToProps)(ToDoContent);
 
 export default TaskListContainer;
+*/

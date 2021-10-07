@@ -5,7 +5,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import reducer  from './reducers/reducer';
+import reducer  from './reducers/reducer.js';
+// import TaskListContainer from './containers/TaskListContainer';
+// import { ToDoContent } from './components/ToDoContent';
 
 let store = createStore(reducer);
 

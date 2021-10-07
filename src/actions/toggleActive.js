@@ -5,7 +5,7 @@ const toggleActive = (id, active) => {
         type: TOGGLE_ACTIVE,
         taskId: id,
         task: {
-            taskActive: active
+            taskComplete: active
         }
     };
 };

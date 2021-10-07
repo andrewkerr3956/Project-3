@@ -1,4 +1,4 @@
-import { combineReducers } from "redux";
+import { combineReducers} from "redux";
 import {ADD_TASK, DELETE_TASK, TOGGLE_ACTIVE} from "../constants/constants";
 
 
