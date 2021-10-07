@@ -4,4 +4,4 @@ User Stories
 
 2) I should be able to filter the items on the To-Do list by "All", "Completed" and by "Active." 
 
-3) I should be able to delete all items at once if I need to.
+3) I should be able to send and submit data through the form on the contact page.
