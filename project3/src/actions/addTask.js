@@ -5,7 +5,7 @@ const addTask = (id, title) => {
         type: ADD_TASK,
         taskId: id,
         taskTitle: title,
-        taskActive: false
+        taskComplete: false
     };
 };
 export default addTask;

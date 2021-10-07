@@ -7,7 +7,7 @@ const mapStateToProps = (state) => {
     return {
         taskId: state.id,
         taskTitle: state.taskTitle,
-        taskActive: state.taskActive
+        taskActive: state.taskComplete
     }
 }
 

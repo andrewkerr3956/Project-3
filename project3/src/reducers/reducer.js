@@ -9,7 +9,7 @@ const taskListData = (state = [], action) => {
         case DELETE_TASK:
             return state.splice(0, action.id, action.id + 1)
         case TOGGLE_ACTIVE:
-            return (state.active ? true : false);
+            return (state.complete ? true : false);
         default:
             return state;
     } 

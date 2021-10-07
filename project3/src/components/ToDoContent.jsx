@@ -6,7 +6,7 @@ const ToDoContent = () => {
 
   const [taskName, setTaskName] = useState("");
   const [tasks, setTasks] = useState([]);
-  const [holdTasks, setHoldTasks] = useState([]);
+  const [view, setView] = useState("All");
 
   // Handle the changing value of the task name.
   const updateTaskName = async (event) => {
@@ -28,8 +28,7 @@ const ToDoContent = () => {
   const updateActive = async (event, idx) => {
     let newArray = tasks;
     newArray[idx].completed = event.target.checked;
-    setTasks(newArray);
-
+    setTasks([...tasks]);
   }
 
   // Check if the task list already includes the task name or not.
@@ -61,59 +60,18 @@ const ToDoContent = () => {
 
   // No filter
   const showAll = async () => {
-    if (holdTasks.length > 0) {
-      setTasks(holdTasks);
-    }
-    setHoldTasks([]);
+    setView("All");
   }
 
   // Show active only
   const showActive = async () => {
-    let activeArray = [];
-    if (holdTasks.length > 0) {
-      for (let i = 0; i < holdTasks.length; i++) {
-        if (!holdTasks[i].completed) {
-          activeArray.push(holdTasks[i]);
-        }
-      }
-    }
-    else {
-      for (let i = 0; i < tasks.length; i++) {
-        if (!tasks[i].completed) {
-          activeArray.push(tasks[i]);
-        }
-      }
-      setHoldTasks(tasks);
-    }
-    // Use the holdTasks state to preserve the original tasks array.
-
-    // Manipulate the tasks array to hold only the active tasks.
-    setTasks(activeArray)
-
+    setView("Active");
   }
 
   // Show completed only
   const showCompleted = async () => {
-    let completedArray = [];
-    if (holdTasks.length > 0) {
-      for (let i = 0; i < holdTasks.length; i++) {
-        if (holdTasks[i].completed) {
-          completedArray.push(holdTasks[i]);
-        }
-      }
-    }
-    else {
-      for (let i = 0; i < tasks.length; i++) {
-        if (tasks[i].completed) {
-          completedArray.push(tasks[i]);
-        }
-      }
-      setHoldTasks(tasks);
-    }
-    // Use the holdTasks state to preserve the original tasks array.
+    setView("Completed");
 
-    // Manipulate the tasks array to hold only the completed tasks.
-    setTasks(completedArray)
   }
 
 
@@ -123,16 +81,44 @@ const ToDoContent = () => {
         {/* <TaskListContainer /> */}
         <input type="text" name="task" value={taskName} onChange={updateTaskName} placeholder={"Enter task..."} />
         <button onClick={addTask}>Add Task</button> <br />
-        <div className="container-fluid" style={{marginTop: "30px", background: "white" }}>
-          <ul style={{marginLeft: "275px", textAlign: "left", listStyleType: "none", background: "gray", borderBottom: "2px solid rgba(0,0,0,0.8)", width: "50%", padding: "15px"}}>
-            {tasks && tasks.length > 0 && tasks.map((task, idx) => {
+        <div className="container-fluid" style={{ marginTop: "30px", background: "white" }}>
+          <ul style={{ marginLeft: "275px", textAlign: "left", listStyleType: "none", background: "gray", borderBottom: "2px solid rgba(0,0,0,0.8)", width: "50%", padding: "15px" }}>
+            {tasks && tasks.length > 0 && view === "All" && tasks.map((task, idx) => {
               return (
-                <li style={{ marginTop: "10px" }} key={idx}>
-                  <input style={{ marginRight: "20px" }} type="checkbox" onChange={(event) => updateActive(event, idx)} id={idx} className="flex-item" />
+                <li style={{ marginTop: "10px", paddingBottom: "10px", borderBottom: "2px solid #909090" }} key={idx}>
+                  <input style={{ marginRight: "20px" }} type="checkbox" onChange={(event) => updateActive(event, idx)} checked={task.completed} className="flex-item" />
                   <span><strong>{task.name}</strong></span>
-                  <button className={"float-right"} id={idx} onClick={deleteTask}>X</button>
+                  <i className={"fa fa-trash text-danger float-right"} id={idx} onClick={deleteTask}></i>
                 </li>
               )
+            })}
+            {tasks && tasks.length > 0 && view === "Active" && tasks.map((task, idx) => {
+              if (task.completed === false) {
+                return (
+                  <li style={{ marginTop: "10px", paddingBottom: "10px", borderBottom: "2px solid #909090" }} key={idx}>
+                    <input style={{ marginRight: "20px" }} type="checkbox" onChange={(event) => updateActive(event, idx)} checked={task.completed} className="flex-item" />
+                    <span><strong>{task.name}</strong></span>
+                    <i className={"fa fa-trash text-danger float-right"} id={idx} onClick={deleteTask}></i>
+                  </li>
+                )
+              }
+              else {
+
+              }
+            })}
+            {tasks && tasks.length > 0 && view === "Completed" && tasks.map((task, idx) => {
+              if (task.completed === true) {
+                return (
+                  <li style={{ marginTop: "10px", paddingBottom: "10px", borderBottom: "2px solid #909090" }} key={idx}>
+                    <input style={{ marginRight: "20px" }} type="checkbox" onChange={(event) => updateActive(event, idx)} checked={task.completed} className="flex-item" />
+                    <span><strong>{task.name}</strong></span>
+                    <i className={"fa fa-trash text-danger float-right"} id={idx} onClick={deleteTask}></i>
+                  </li>
+                )
+              }
+              else {
+
+              }
             })}
           </ul>
 

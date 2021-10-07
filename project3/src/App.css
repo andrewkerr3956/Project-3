@@ -9,6 +9,7 @@ header {
 h2 {
   color: white;
   margin-left: 10px;
+
 }
 
 nav {
@@ -81,6 +82,7 @@ nav li a:hover {
 }
 
 .contact-heading {
+  text-align: center;
   color: black;
 }
 
